@@ -18,7 +18,7 @@ public class IbanValidator {
   
         let text = input.joined(separator: "").replacingOccurrences(of: " ", with: "")
                 
-        let regex = try! NSRegularExpression(pattern: "[A-Z]{2}[0-9]{24}")
+        let regex = try! NSRegularExpression(pattern: "\\b[A-Z]{2}[0-9]{2}[A-Z0-9]{4}[0-9]{7}([A-Z0-9]?){0,16}\\b")
         
         let range = NSRange(text.startIndex..<text.endIndex, in: text)
         let matches = regex.matches(in: text, range: range)
