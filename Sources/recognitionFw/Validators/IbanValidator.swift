@@ -16,7 +16,7 @@ public class IbanValidator {
         print(input)
         var ibanArray : [String] = []
   
-        let pattern = "\\bTR\\s?\\d{2}\\s?\\d{4}\\s?\\d{4}\\s?\\d{4}\\s?\\d{4}\\s?\\d{2}\\b"
+        let pattern = "\\bTR\\s?[0-9]{2}\\s?[0-9]{4}\\s?[0-9]{4}\\s?[0-9]{4}\\s?[0-9]{4}\\s?[0-9]{2}\\b"
 
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
         
