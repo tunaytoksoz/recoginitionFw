@@ -16,17 +16,16 @@ public class IbanValidator {
         print(input)
         var ibanArray : [String] = []
   
-        let pattern = "\\bTR\\s?[0-9]{2}\\s?[0-9]{4}\\s?[0-9]{4}\\s?[0-9]{4}\\s?[0-9]{4}\\s?[0-9]{2}\\b"
-
-        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        let text = input.joined(separator: "").replacingOccurrences(of: " ", with: "")
+                
+        let regex = try! NSRegularExpression(pattern: "[A-Z]{2}[0-9]{24}")
         
+        let range = NSRange(text.startIndex..<text.endIndex, in: text)
+        let matches = regex.matches(in: text, range: range)
 
-        for string in input {
-            let range = NSRange(location: 0, length: string.utf16.count)
-            if let match = regex.firstMatch(in: string, options: [], range: range) {
-                let matchedString = (string as NSString).substring(with: match.range)
-                ibanArray.append(matchedString)
-            }
+        for match in matches {
+                    let iban = (text as NSString).substring(with: match.range)
+                    ibanArray.append(iban)
         }
         
         print(ibanArray.first)
