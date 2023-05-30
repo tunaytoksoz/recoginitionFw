@@ -41,7 +41,7 @@ public class CustomController: UIViewController{
         button.backgroundColor = .systemBlue
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.layer.cornerRadius = 10
-        button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
 
@@ -51,7 +51,7 @@ public class CustomController: UIViewController{
         button.backgroundColor = .systemBlue
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.layer.cornerRadius = 10
-        button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
     
@@ -63,7 +63,6 @@ public class CustomController: UIViewController{
         stackView.spacing = 10
         stackView.alignment = .center
         stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
 
@@ -108,6 +107,11 @@ public class CustomController: UIViewController{
         stackView.addArrangedSubview(cameraButton)
         stackView.addArrangedSubview(libraryButton)
         view.addSubview(stackView)
+        
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        libraryButton.translatesAutoresizingMaskIntoConstraints = false
+        cameraButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             cameraButton.widthAnchor.constraint(equalToConstant: 100),

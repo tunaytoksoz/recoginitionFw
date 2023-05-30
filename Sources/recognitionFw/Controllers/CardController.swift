@@ -28,13 +28,23 @@ public class CardController: UIViewController{
         fatalError("init(coder:) has not been implemented")
     }
     
+    private let sourceLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .label
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20, weight: .regular)
+        label.text = "Select Image Source"
+        return label
+    }()
+
+    
     private let cameraButton: UIButton = {
         let button = UIButton()
         button.setTitle("Camera", for: .normal)
         button.backgroundColor = .systemBlue
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.layer.cornerRadius = 10
-        button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
 
@@ -44,7 +54,7 @@ public class CardController: UIViewController{
         button.backgroundColor = .systemBlue
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.layer.cornerRadius = 10
-        button.translatesAutoresizingMaskIntoConstraints = false
+       
         return button
     }()
     
@@ -56,7 +66,6 @@ public class CardController: UIViewController{
         stackView.spacing = 10
         stackView.alignment = .center
         stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
 
@@ -97,17 +106,28 @@ public class CardController: UIViewController{
     // MARK: - UI Setup
     private func setupUI() {
         view.backgroundColor = .clear
+        stackView.addArrangedSubview(sourceLabel)
         stackView.addArrangedSubview(cameraButton)
         stackView.addArrangedSubview(libraryButton)
         view.addSubview(stackView)
         
+        
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        libraryButton.translatesAutoresizingMaskIntoConstraints = false
+        cameraButton.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            cameraButton.widthAnchor.constraint(equalToConstant: 100),
+            libraryButton.widthAnchor.constraint(equalToConstant: 100),
+            libraryButton.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -10),
+            
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            stackView.heightAnchor.constraint(equalToConstant: 200),
-           // stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40)
+            stackView.heightAnchor.constraint(equalToConstant: 150),
         ])
     }
 
