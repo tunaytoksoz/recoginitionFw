@@ -62,7 +62,7 @@ public class CustomController: UIViewController{
         stackView.axis = .vertical
         stackView.spacing = 10
         stackView.alignment = .center
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
         return stackView
     }()
 
@@ -116,6 +116,9 @@ public class CustomController: UIViewController{
         NSLayoutConstraint.activate([
             cameraButton.widthAnchor.constraint(equalToConstant: 120),
             libraryButton.widthAnchor.constraint(equalToConstant: 120),
+            
+            cameraButton.heightAnchor.constraint(equalToConstant: 50),
+            libraryButton.heightAnchor.constraint(equalToConstant: 50),
 
             
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
