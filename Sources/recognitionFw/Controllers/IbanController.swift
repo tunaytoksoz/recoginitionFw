@@ -112,9 +112,8 @@ public class IbanController: UIViewController{
         cameraButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            cameraButton.widthAnchor.constraint(equalToConstant: 100),
-            libraryButton.widthAnchor.constraint(equalToConstant: 100),
-            libraryButton.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -10),
+            cameraButton.widthAnchor.constraint(equalToConstant: 120),
+            libraryButton.widthAnchor.constraint(equalToConstant: 120120),
             
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
