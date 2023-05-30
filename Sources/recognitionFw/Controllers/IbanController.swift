@@ -117,7 +117,6 @@ public class IbanController: UIViewController{
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.heightAnchor.constraint(equalToConstant: 150),
-           // stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40)
         ])
     }
 
