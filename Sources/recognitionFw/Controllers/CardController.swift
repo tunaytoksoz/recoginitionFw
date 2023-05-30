@@ -147,7 +147,12 @@ extension CardController {
             
             let result = self.cardValidator.validateCardNumber(input: recognizedStrings)
             
-            self.delegate?.didCompletedRecognition(CardNumbers: result, isSucces: true)
+            if result.0 == "" {
+                self.delegate?.didCompletedRecognition(CardNumbers: result, isSucces: false)
+            } else {
+                self.delegate?.didCompletedRecognition(CardNumbers: result, isSucces: true)
+            }
+            
             self.dismiss(animated: true)
         })
         
