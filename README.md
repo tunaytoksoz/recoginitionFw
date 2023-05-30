@@ -20,8 +20,9 @@ CardController
         present(vc, animated: true)
 ```
 
-You can also customize your Regular expression.CustomController
+You can also customize your Regular expression.
 
+CustomController
 ```swift
         let regex = "[A-Z]{2}[0-9]{24}"
         
