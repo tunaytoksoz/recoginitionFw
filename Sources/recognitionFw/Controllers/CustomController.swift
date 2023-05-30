@@ -113,7 +113,7 @@ public class CustomController: UIViewController{
         libraryButton.translatesAutoresizingMaskIntoConstraints = false
         cameraButton.translatesAutoresizingMaskIntoConstraints = false
         
-        let bottomConstraint =  libraryButton.bottomAnchor.constraint(equalTo: stackView.layoutMarginsGuide.bottomAnchor, constant: -10)
+        let bottomConstraint =  libraryButton.bottomAnchor.constraint(equalTo: stackView.layoutMarginsGuide.bottomAnchor, constant: 10)
         bottomConstraint.priority = UILayoutPriority(rawValue: UILayoutPriority.required.rawValue - 1)
         
         NSLayoutConstraint.activate([
