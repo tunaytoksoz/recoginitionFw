@@ -128,7 +128,7 @@ public class CardController: UIViewController{
 
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            stackView.heightAnchor.constraint(equalToConstant: 150),
+            stackView.heightAnchor.constraint(equalToConstant: 200),
         ])
     }
 
