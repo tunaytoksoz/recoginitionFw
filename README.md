@@ -28,14 +28,14 @@ IbanControllerDelegate
         func didCompletedRecognition(iban: String, isSucces: Bool) {
         dismiss(animated: true)
         textField.text = iban
-    }
+        }
 ```
 CardControllerDelegate
 ```swift
     func didCompletedRecognition(CardNumbers: (String, String), isSucces: Bool) {
         dismiss(animated: true)
         textField.text = CardNumbers.0
-        textField2.text = CardNumbers.2
+        textField2.text = CardNumbers.1
     }
 ```
 
