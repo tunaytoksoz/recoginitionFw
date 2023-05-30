@@ -13,7 +13,6 @@ public class IbanValidator {
     public init() {}
     
     func validateIban(input : [String]) -> [String] {
-        print(input)
         var ibanArray : [String] = []
   
         let text = input.joined(separator: "").replacingOccurrences(of: " ", with: "")
@@ -28,9 +27,6 @@ public class IbanValidator {
                     ibanArray.append(iban)
             
         }
-        
-        print(ibanArray.first)
-      
         
         return ibanArray
     }

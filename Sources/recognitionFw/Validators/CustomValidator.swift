@@ -17,7 +17,7 @@ public class CustomValidator {
     }
     
     func validateResult(input : [String]) -> [String] {
-        print(input)
+        
         var resultArray : [String] = []
   
         let text = input.joined(separator: "").replacingOccurrences(of: " ", with: "")
@@ -32,9 +32,6 @@ public class CustomValidator {
                     resultArray.append(result)
             
         }
-        
-        print(resultArray.first)
-      
         
         return resultArray
     }

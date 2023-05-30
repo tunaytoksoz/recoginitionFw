@@ -12,8 +12,7 @@ public class CreditCardValidator {
     public init() {}
     
     func validateCardNumber(input : [String]) -> (String,String) {
-        
-        print(input)
+
         var cardNumber :String = ""
         var expirationDate : String = ""
         

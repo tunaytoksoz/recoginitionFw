@@ -20,6 +20,17 @@ CardController
         present(vc, animated: true)
 ```
 
+You can also customize your Regular expression.CustomController
+
+```swift
+        let regex = "[A-Z]{2}[0-9]{24}"
+        
+        let vc = CustomController(regex: regex)
+        vc.delegate = self
+        vc.modalPresentationStyle = .formSheet
+        present(vc, animated: true)
+```
+
 After the picture is selected, you can print the number on the screen with the delegates.
 
 IbanControllerDelegate
@@ -30,6 +41,7 @@ IbanControllerDelegate
         textField.text = iban
         }
 ```
+
 CardControllerDelegate
 ```swift
     func didCompletedRecognition(CardNumbers: (String, String), isSucces: Bool) {
@@ -38,6 +50,16 @@ CardControllerDelegate
         textField2.text = CardNumbers.1
     }
 ```
+
+CustomControllerDelegate
+```swift
+        func didCompletedRecognition(result: String, isSucces: Bool) {
+        dismiss(animated: true)
+        textField.text = result
+        }
+```
+
+
 
 
 ## Installation
