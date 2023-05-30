@@ -102,7 +102,7 @@ public class IbanController: UIViewController{
     // MARK: - UI Setup
     private func setupUI() {
         view.backgroundColor = .clear
-        stackView.addSubview(sourceLabel)
+        stackView.addArrangedSubview(sourceLabel)
         stackView.addArrangedSubview(cameraButton)
         stackView.addArrangedSubview(libraryButton)
         view.addSubview(stackView)
