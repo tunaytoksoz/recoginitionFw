@@ -113,7 +113,9 @@ public class IbanController: UIViewController{
         
         NSLayoutConstraint.activate([
             cameraButton.widthAnchor.constraint(equalToConstant: 120),
-            libraryButton.widthAnchor.constraint(equalToConstant: 120120),
+            libraryButton.widthAnchor.constraint(equalToConstant: 120),
+            cameraButton.heightAnchor.constraint(equalToConstant: 50),
+            libraryButton.heightAnchor.constraint(equalToConstant: 50),
             
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),

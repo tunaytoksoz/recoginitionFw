@@ -62,7 +62,7 @@ public class CustomController: UIViewController{
         stackView.axis = .vertical
         stackView.spacing = 10
         stackView.alignment = .center
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
         return stackView
     }()
 
