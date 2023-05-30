@@ -3,13 +3,7 @@ recognitionFw is detect card and iban numbers using Vision Framework.
 
 ## Usage
 
-```swift
-        let vc = IbanController()
-        vc.delegate = self
-        vc.modalPresentationStyle = .formSheet
-        present(vc, animated: true)
-```
-
+IbanController
 
 ```swift
         let vc = IbanController()
@@ -17,8 +11,18 @@ recognitionFw is detect card and iban numbers using Vision Framework.
         vc.modalPresentationStyle = .formSheet
         present(vc, animated: true)
 ```
+CardController
 
-After the picture is selected, you can print the number on the screen with the protocol.
+```swift
+        let vc = CardController()
+        vc.delegate = self
+        vc.modalPresentationStyle = .formSheet
+        present(vc, animated: true)
+```
+
+After the picture is selected, you can print the number on the screen with the delegates.
+
+IbanControllerDelegate
 
 ```swift
         func didCompletedRecognition(iban: String, isSucces: Bool) {
@@ -26,6 +30,16 @@ After the picture is selected, you can print the number on the screen with the p
         textField.text = iban
     }
 ```
+CardControllerDelegate
+```swift
+    func didCompletedRecognition(CardNumbers: (String, String), isSucces: Bool) {
+        dismiss(animated: true)
+        textField.text = CardNumbers.0
+        textField2.text = CardNumbers.2
+    }
+```
+
+
 ## Installation
 
 You can install using Swift Package Manager 
