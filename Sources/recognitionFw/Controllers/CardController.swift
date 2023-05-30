@@ -50,9 +50,9 @@ public class CardController: UIViewController{
     
     let stackView : UIStackView = {
         let stackView = UIStackView()
-        stackView.backgroundColor = .clear
+        stackView.backgroundColor = .opaqueSeparator
         stackView.layer.cornerRadius = 10
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
         stackView.spacing = 10
         stackView.alignment = .center
         stackView.distribution = .fillEqually
