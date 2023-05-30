@@ -65,6 +65,12 @@ public class CustomController: UIViewController{
         stackView.distribution = .fillEqually
         return stackView
     }()
+    
+    let uiView : UIView = {
+       let uv = UIView()
+        uv.backgroundColor = .clear
+        return uv
+    }()
 
     var request: VNRecognizeTextRequest!
     
@@ -103,17 +109,18 @@ public class CustomController: UIViewController{
     // MARK: - UI Setup
     private func setupUI() {
         view.backgroundColor = .clear
+      
         stackView.addArrangedSubview(sourceLabel)
         stackView.addArrangedSubview(cameraButton)
         stackView.addArrangedSubview(libraryButton)
-        view.addSubview(stackView)
-        
+        uiView.addSubview(stackView)
+        view.addSubview(uiView)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         libraryButton.translatesAutoresizingMaskIntoConstraints = false
         cameraButton.translatesAutoresizingMaskIntoConstraints = false
         
-        let heightConstraint =  stackView.heightAnchor.constraint(equalToConstant: 250)
+        let heightConstraint =  stackView.heightAnchor.constraint(equalToConstant: 200)
         heightConstraint.priority = .defaultHigh
         
         NSLayoutConstraint.activate([
@@ -121,11 +128,22 @@ public class CustomController: UIViewController{
             libraryButton.widthAnchor.constraint(equalToConstant: 120),
             libraryButton.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -10),
             
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            heightConstraint
+            /**
+             stackView.addArrangedSubview(sourceLabel)
+             stackView.addArrangedSubview(cameraButton)
+             stackView.addArrangedSubview(libraryButton)
+             uiView.addSubview(stackView)
+             view.addSubview(uiView)
+             
+             */
+            heightConstraint,
+            
+            uiView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            uiView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            uiView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            uiView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            uiView.heightAnchor.constraint(equalToConstant: 200),
+            
         ])
     }
 
