@@ -47,7 +47,7 @@ public class IbanController: UIViewController{
         let stackView = UIStackView()
         stackView.backgroundColor = .opaqueSeparator
         stackView.layer.cornerRadius = 10
-        stackView.axis = .vertical
+        stackView.axis = .horizontal
         stackView.spacing = 10
         stackView.alignment = .center
         stackView.distribution = .fillEqually
@@ -97,11 +97,11 @@ public class IbanController: UIViewController{
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            stackView.heightAnchor.constraint(equalToConstant: 200),
+            stackView.heightAnchor.constraint(equalToConstant: 150),
            // stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40)
         ])
     }
