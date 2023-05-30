@@ -116,9 +116,9 @@ public class CustomController: UIViewController{
         NSLayoutConstraint.activate([
             cameraButton.widthAnchor.constraint(equalToConstant: 120),
             libraryButton.widthAnchor.constraint(equalToConstant: 120),
-            
             cameraButton.heightAnchor.constraint(equalToConstant: 50),
             libraryButton.heightAnchor.constraint(equalToConstant: 50),
+            libraryButton.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 5),
 
             
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
