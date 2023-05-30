@@ -57,7 +57,7 @@ public class IbanController: UIViewController{
         let stackView = UIStackView()
         stackView.backgroundColor = .opaqueSeparator
         stackView.layer.cornerRadius = 10
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
         stackView.spacing = 10
         stackView.alignment = .center
         stackView.distribution = .fillEqually
