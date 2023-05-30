@@ -117,13 +117,16 @@ public class CardController: UIViewController{
         libraryButton.translatesAutoresizingMaskIntoConstraints = false
         cameraButton.translatesAutoresizingMaskIntoConstraints = false
         
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
+        stackView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        
         NSLayoutConstraint.activate([
             
             cameraButton.widthAnchor.constraint(equalToConstant: 120),
             libraryButton.widthAnchor.constraint(equalToConstant: 120),
   
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.heightAnchor.constraint(equalToConstant: 150),
