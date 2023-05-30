@@ -113,7 +113,7 @@ public class CustomController: UIViewController{
         libraryButton.translatesAutoresizingMaskIntoConstraints = false
         cameraButton.translatesAutoresizingMaskIntoConstraints = false
         
-        let heightConstraint =  stackView.heightAnchor.constraint(equalToConstant: 150)
+        let heightConstraint =  stackView.heightAnchor.constraint(equalToConstant: 250)
         heightConstraint.priority = .defaultHigh
         
         NSLayoutConstraint.activate([
