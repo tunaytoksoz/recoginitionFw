@@ -144,9 +144,10 @@ extension CardController {
             let recognizedStrings = observations.compactMap { observation in
                 return observation.topCandidates(1).first?.string
             }
+            print(recognizedStrings)
             
             let result = self.cardValidator.validateCardNumber(input: recognizedStrings)
-            print(result)
+            
             if result.0 == "" {
                 self.delegate?.didCompletedRecognition(CardNumbers: result, isSucces: false)
             } else {
