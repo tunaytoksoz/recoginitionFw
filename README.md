@@ -61,7 +61,7 @@ CustomControllerDelegate
         func didCompletedRecognition(result: String, isSucces: Bool) {
         dismiss(animated: true)
         if isSucces{
-            textField.text = iban
+            textField.text = result
         } else { // }
         }
 ```
