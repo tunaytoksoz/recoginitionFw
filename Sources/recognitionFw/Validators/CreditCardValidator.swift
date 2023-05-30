@@ -17,7 +17,7 @@ public class CreditCardValidator {
         var expirationDate : String = ""
         
         for text in input {
-            if Int(text.replacingOccurrences(of: " ", with: "")) != nil {
+            if Int(text.replacingOccurrences(of: " ", with: "")) != nil && cardNumber.count < 20 {
                 cardNumber += text + " "
             }
         }
