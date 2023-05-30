@@ -12,6 +12,11 @@ You can install using Swift Package Manager
 
 ## Usage
 
+```swift
+        import recognitionFw
+```
+
+
 IbanController
 
 ```swift
