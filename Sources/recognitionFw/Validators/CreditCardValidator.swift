@@ -15,12 +15,24 @@ public class CreditCardValidator {
 
         var cardNumber :String = ""
         var expirationDate : String = ""
+        let pattern = "\\b\\d{4}\\s\\d{4}\\s\\d{4}\\s\\d{4}\\b"
         
-        for text in input {
-            if Int(text.replacingOccurrences(of: " ", with: "")) != nil && cardNumber.count < 20 {
-                cardNumber += text + " "
+    /**
+     for text in input {
+         if Int(text.replacingOccurrences(of: " ", with: "")) != nil && cardNumber.count < 20 {
+             cardNumber += text + " "
+         }
+     }
+     */
+        
+        let regexCardNumber = try! NSRegularExpression(pattern: pattern)
+            
+        for string in input {
+                if let match = regexCardNumber.firstMatch(in: string, range: NSRange(string.startIndex..., in: string)) {
+                    cardNumber = String(string[Range(match.range, in: string)!])
             }
         }
+            
 
         let text = input.joined(separator: "").replacingOccurrences(of: " ", with: "")
         
