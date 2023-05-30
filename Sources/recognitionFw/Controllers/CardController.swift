@@ -125,8 +125,7 @@ public class CardController: UIViewController{
             
             cameraButton.widthAnchor.constraint(equalToConstant: 120),
             libraryButton.widthAnchor.constraint(equalToConstant: 120),
-  
-            
+
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.heightAnchor.constraint(equalToConstant: 150),

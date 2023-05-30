@@ -121,26 +121,18 @@ public class CustomController: UIViewController{
         cameraButton.translatesAutoresizingMaskIntoConstraints = false
         uiView.translatesAutoresizingMaskIntoConstraints = false
         
-        let heightConstraint =  stackView.heightAnchor.constraint(equalToConstant: 200)
-        heightConstraint.priority = .defaultHigh
+        stackView.isLayoutMarginsRelativeArrangement = true
         stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
+        stackView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        
         NSLayoutConstraint.activate([
             cameraButton.widthAnchor.constraint(equalToConstant: 120),
             libraryButton.widthAnchor.constraint(equalToConstant: 120),
             libraryButton.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -10),
             
-            stackView.leadingAnchor.constraint(equalTo: uiView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: uiView.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: uiView.bottomAnchor),
-            stackView.topAnchor.constraint(equalTo: uiView.topAnchor),
-           
-            heightConstraint,
-            
-            uiView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            uiView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            uiView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            uiView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            uiView.heightAnchor.constraint(equalToConstant: 200),
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.heightAnchor.constraint(equalToConstant: 150),
             
         ])
     }
