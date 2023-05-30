@@ -23,6 +23,16 @@ public class IbanController: UIViewController{
         fatalError("init(coder:) has not been implemented")
     }
     
+    private let sourceLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .label
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20, weight: .regular)
+        label.text = "Select Image Source"
+        return label
+    }()
+
+    
     private let cameraButton: UIButton = {
         let button = UIButton()
         button.setTitle("Camera", for: .normal)
@@ -92,6 +102,7 @@ public class IbanController: UIViewController{
     // MARK: - UI Setup
     private func setupUI() {
         view.backgroundColor = .clear
+        stackView.addSubview(sourceLabel)
         stackView.addArrangedSubview(cameraButton)
         stackView.addArrangedSubview(libraryButton)
         view.addSubview(stackView)
