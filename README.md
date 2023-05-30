@@ -1,6 +1,15 @@
 # recoginitionFw
 recognitionFw is detect card and iban numbers using Vision Framework. 
 
+
+## Installation
+
+You can install using Swift Package Manager 
+
+```swift
+        https://github.com/tunaytoksoz/recoginitionFw.git
+```
+
 ## Usage
 
 IbanController
@@ -69,9 +78,4 @@ CustomControllerDelegate
 
 
 
-## Installation
-
-You can install using Swift Package Manager 
-
-* [https://github.com/tunaytoksoz/recoginitionFw.git](https://github.com/tunaytoksoz/recoginitionFw.git)
 
