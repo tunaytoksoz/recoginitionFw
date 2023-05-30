@@ -39,7 +39,9 @@ IbanControllerDelegate
 ```swift
         func didCompletedRecognition(iban: String, isSucces: Bool) {
         dismiss(animated: true)
-        textField.text = iban
+        if isSucces{
+            textField.text = iban
+        } else { // }
         }
 ```
 
@@ -47,8 +49,10 @@ CardControllerDelegate
 ```swift
     func didCompletedRecognition(CardNumbers: (String, String), isSucces: Bool) {
         dismiss(animated: true)
+        if isSucces {
         textField.text = CardNumbers.0
         textField2.text = CardNumbers.1
+        } else { // }
     }
 ```
 
@@ -56,7 +60,9 @@ CustomControllerDelegate
 ```swift
         func didCompletedRecognition(result: String, isSucces: Bool) {
         dismiss(animated: true)
-        textField.text = result
+        if isSucces{
+            textField.text = iban
+        } else { // }
         }
 ```
 
