@@ -38,10 +38,16 @@ public class CreditCardValidator {
             for match in matches {
                 let number = (text as NSString).substring(with: match.range)
                 cardNumber = formatNumber(input: number)
-                print(cardNumber)
-                print(number)
-                print(formatNumber(input: number))
             }
+        }
+        
+        if cardNumber == "" {
+            for text in input {
+                if Int(text.replacingOccurrences(of: " ", with: "")) != nil && (cardNumber.count + text.count) < 16 {
+                    cardNumber += text
+                }
+            }
+            cardNumber = formatNumber(input: cardNumber)
         }
         
        
