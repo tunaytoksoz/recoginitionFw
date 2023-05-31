@@ -28,15 +28,16 @@ public class CreditCardValidator {
             }
         }
         let text = input.joined(separator: "").replacingOccurrences(of: " ", with: "")
+        let cardRegexWithoutspace = try! NSRegularExpression(pattern: "[0-9]{16}")
         
         if cardNumber == "" {
             
             let range = NSRange(text.startIndex..<text.endIndex, in: text)
-            let matches = regexCardNumber.matches(in: text, range: range)
+            let matches = cardRegexWithoutspace.matches(in: text, range: range)
 
             for match in matches {
-                let skt = (text as NSString).substring(with: match.range)
-                expirationDate = skt
+                let number = (text as NSString).substring(with: match.range)
+                cardNumber = number
             }
         }
         
