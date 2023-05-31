@@ -16,7 +16,7 @@ public class CreditCardValidator {
         var cardNumber :String = ""
         var expirationDate : String = ""
         let patternCardNumber = "\\b\\d{4}\\s?\\d{4}\\s?\\d{4}\\s?\\d{4}\\b"
-        let patternexpirationDate = "(0[1-9]|1[0-2])/(2[2-9]|[3-9][0-9])"
+        let patternexpirationDate = "(0[1-9]|1[0-2])/(2[0-9]|[0-9][0-9])"
         
         
         
