@@ -14,10 +14,12 @@ final class recognitionFwTests: XCTestCase {
     }
     
     func testValidateCardNumber(){
-        let input = ["b","a"]
+        let input = ["Nakit ihtiyaciniza hizli cözüm", "Sekerbank\'ta!", "Sekerbank.S gobonus", "Sekerbank& gobonus", "56 7890", "4111 5613 3456 7890", "411", "HANDE AKIN", "sus 07/22", "VISA", "%1,60°", "SekerbankS"]
         
         let result = sut.validateCardNumber(input: input)
         
+        XCTAssertEqual( result.0, "4111 5613 3456 7890")
+        XCTAssertEqual( result.1, "07/22")
         
     }
 }
