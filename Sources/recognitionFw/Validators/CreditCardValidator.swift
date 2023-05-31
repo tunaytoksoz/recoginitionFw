@@ -38,6 +38,9 @@ public class CreditCardValidator {
             for match in matches {
                 let number = (text as NSString).substring(with: match.range)
                 cardNumber = formatNumber(input: number)
+                print(cardNumber)
+                print(number)
+                print(formatNumber(input: number))
             }
         }
         
