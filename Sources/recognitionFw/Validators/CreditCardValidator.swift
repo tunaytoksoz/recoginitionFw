@@ -37,7 +37,7 @@ public class CreditCardValidator {
 
             for match in matches {
                 let number = (text as NSString).substring(with: match.range)
-                cardNumber = number
+                cardNumber = formatNumber(input: number)
             }
         }
         
@@ -54,5 +54,17 @@ public class CreditCardValidator {
         }
         
         return (cardNumber,expirationDate)
+    }
+    
+    
+    func formatNumber(input : String) -> String {
+        var formattedNumber = ""
+        for (index, digit) in input.enumerated() {
+            formattedNumber.append(digit)
+            if (index + 1) % 4 == 0 {
+                formattedNumber.append(" ")
+            }
+        }
+        return formattedNumber
     }
 }
