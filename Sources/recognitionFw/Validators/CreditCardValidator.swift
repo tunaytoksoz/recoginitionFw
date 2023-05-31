@@ -27,8 +27,20 @@ public class CreditCardValidator {
                     cardNumber = String(string[Range(match.range, in: string)!])
             }
         }
-        
         let text = input.joined(separator: "").replacingOccurrences(of: " ", with: "")
+        
+        if cardNumber == "" {
+            
+            let range = NSRange(text.startIndex..<text.endIndex, in: text)
+            let matches = regexCardNumber.matches(in: text, range: range)
+
+            for match in matches {
+                let skt = (text as NSString).substring(with: match.range)
+                expirationDate = skt
+            }
+        }
+        
+       
         
         let regex = try! NSRegularExpression(pattern: patternexpirationDate )
 
