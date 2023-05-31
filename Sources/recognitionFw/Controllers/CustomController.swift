@@ -150,7 +150,7 @@ extension CustomController {
             let recognizedStrings = observations.compactMap { observation in
                 return observation.topCandidates(1).first?.string
             }
-            
+            print(recognizedStrings)
             let result = self.customValidator.validateResult(input: recognizedStrings)
             
             if result.isEmpty {
